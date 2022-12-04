@@ -1,6 +1,8 @@
+const EleventyPluginRss = require('@11ty/eleventy-plugin-rss');
 const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
 
 module.exports = (eleventyConfig) => {
+  eleventyConfig.addPlugin(EleventyPluginRss);
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     tempFolderName: '.11ty-vite', // Default name of the temp folder
     serverOptions: {},

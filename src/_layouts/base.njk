@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ meta.siteLang }}">
+  <head>
+    {% include "meta.njk" %}
+    {% include "stylesheets.njk" %}
+  </head>
+  <body>
+    <div id="root">
+      {% include "header.njk" %}
+      <main class="site-main">
+        {{ content | safe }}
+      </main>
+      {% include "footer.njk" %}
+    </div>
+    <script type="module" src="{{ '/assets/js/main.js' | url }}"></script>
+  </body>
+</html>

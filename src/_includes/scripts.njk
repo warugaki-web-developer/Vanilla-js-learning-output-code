@@ -1,0 +1,6 @@
+{# Common js #}
+<script src="{{ '/js/main.js' | url }}"></script>
+{# Page js #}
+{%- for script in pageScripts %}
+  <script src="{{ script | url }}"></script>
+{%- endfor %}

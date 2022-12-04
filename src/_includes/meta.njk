@@ -1,0 +1,35 @@
+{%- set pageTitle %}
+{% if title %}{{ title }} | {% endif %}{{ meta.siteName }}
+{% endset -%}
+
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
+
+{# General #}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription or meta.siteDescription }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+
+{# Open Graph Protocol #}
+<meta property="og:site_name" content="{{ meta.siteName }}">
+<meta property="og:title" content="{{ title or meta.siteName }}">
+<meta property="og:description" content="{{ pageDescription  or meta.siteDescription }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:locale" content="{{ meta.locale }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{pageTitle}}">
+<meta name="twitter:description" content="{{ pageDescription or meta.siteDescription }}">
+
+{# Favicon #}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | url }}">
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
+<link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
+
+{# Web App Manifest #}
+<link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+
+{# RSS Feed #}
+<link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.siteName }}">

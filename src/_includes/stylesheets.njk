@@ -1,0 +1,6 @@
+{# Common css #}
+<link rel="stylesheet" href="{{ '/assets/css/main.scss' | url }}">
+{# Page css #}
+{%- for href in pageStylesheets %}
+  <link rel="stylesheet" href="{{ href | url }}">
+{%- endfor %}
